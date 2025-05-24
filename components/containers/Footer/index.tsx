@@ -4,7 +4,7 @@ type Props = {};
 
 function Footer({}: Props) {
   return (
-    <footer className="bg-black text-white p-4 text-center">
+    <footer className="bg-black text-white p-6 text-center">
       <div>
         <p> &copy; {new Date().getFullYear()} </p>
       </div>
