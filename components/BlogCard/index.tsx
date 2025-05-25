@@ -9,7 +9,7 @@ export default function BlogCard({}: Props) {
     <Link className="flex items-start gap-4 mb-4" href={"/"}>
       <div className="relative w-24 h-24">
         <Image
-          src="https://picsum.photos/50/50"
+          src="https://picsum.photos/96/96"
           alt="Blog Card Image"
           className="rounded-lg"
           fill
