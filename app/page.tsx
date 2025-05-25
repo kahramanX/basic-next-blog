@@ -1,3 +1,4 @@
+import BlogCard from "@/components/BlogCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,6 +11,11 @@ export default function Home() {
   return (
     <main className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen border-2 border-red-500">
       Home
+      <div className="">
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+      </div>
     </main>
   );
 }

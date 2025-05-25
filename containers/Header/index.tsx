@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +9,7 @@ type Props = {};
 function Header({}: Props) {
   return (
     <header className="bg-black px-10 py-6 flex items-center justify-between text-white">
-      <Link className="flex gap-4" href="/">
+      <Link className="flex gap-8" href="/">
         <Image
           aria-hidden
           src="/next.svg"
