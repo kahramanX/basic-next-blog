@@ -1,6 +1,7 @@
 import { PostsResponse, SinglePost } from "@/app/types";
 import React from "react";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: { id: string };
@@ -13,11 +14,19 @@ export const metadata = {
 
 export default async function Page({ params }: Props) {
   async function getPost(id: string): Promise<SinglePost> {
-    const response = await fetch(`https://dummyjson.com/post/${id}?limit=10`);
-    return response.json();
+    try {
+      const response = await fetch(`https://dummyjson.com/post/${id}?limit=10`);
+      return response.json();
+    } catch (error) {
+      throw new Error(error as string);
+    }
   }
 
   const post = await getPost(params.id);
+
+  if (!post.id || !post.title || !post.body) {
+    return notFound();
+  }
 
   return (
     <div>
