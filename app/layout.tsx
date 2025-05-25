@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="tr">
       <body className={`${geistSans.variable} antialiased`}>
         <Header />
-        {children}
+        <main className="min-h-screen px-20 py-6">{children}</main>
         <Footer />
       </body>
     </html>

@@ -17,12 +17,10 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    <main className="min-h-screen border-2 border-red-500 px-20 py-6">
-      <div className="">
-        {posts.posts.map((post: Post) => (
-          <BlogCard key={post.id} {...post} />
-        ))}
-      </div>
-    </main>
+    <>
+      {posts.posts.map((post: Post) => (
+        <BlogCard key={post.id} {...post} />
+      ))}
+    </>
   );
 }
