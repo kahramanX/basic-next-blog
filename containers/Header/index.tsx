@@ -8,7 +8,7 @@ type Props = {};
 
 function Header({}: Props) {
   return (
-    <header className="bg-black px-10 py-6 flex items-center justify-between text-white">
+    <header className="bg-black px-20 py-6 flex items-center justify-between text-white">
       <Link className="flex gap-8" href="/">
         <Image
           aria-hidden
