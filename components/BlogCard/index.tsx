@@ -1,31 +1,22 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { Post } from "@/app/types";
 
-type Props = {};
-
-export default function BlogCard({}: Props) {
+export default function BlogCard(props: Post) {
   return (
-    <Link className="flex items-start gap-4 mb-4" href={"/"}>
-      <div className="relative w-24 h-24">
+    <Link className="flex items-start gap-4 mb-4 " href={`/blog/${props.id}`}>
+      <div className="relative max-w-24 w-full h-24 overflow-hidden">
         <Image
-          src="https://picsum.photos/96/96"
+          src={`https://picsum.photos/100/100?random=${props.id}`}
           alt="Blog Card Image"
-          className="rounded-lg"
+          className="rounded-lg object-cover"
           fill
         />
       </div>
       <div>
-        <div className="text-md font-semibold">Blog Title</div>
-        <div className="text-sm text-gray-500 line-clamp-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-          laboriosam sunt odio corrupti nulla ut. Consequuntur iure
-          exercitationem ipsum? Nihil odio officiis consequuntur iusto ex
-          tempora rerum magnam aliquid eos. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Repudiandae tempore a molestiae dolore
-          repellat quos voluptates excepturi eveniet eius distinctio. Nobis quo
-          fugiat illo quis aperiam sit necessitatibus quam expedita!
-        </div>
+        <div className="text-md font-semibold">{props.title}</div>
+        <div className="text-sm text-gray-500 line-clamp-2">{props.body}</div>
       </div>
     </Link>
   );
